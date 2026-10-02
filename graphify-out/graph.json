@@ -1,0 +1,352 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Wrist_STLs",
+      "label": "Wrist STLs",
+      "community": 0,
+      "confidence": "EXTRACTED",
+      "description": "Munequilla_01.stl, Tapa_servo.stl wrist gimbal parts (~115mm)",
+      "file_type": "concept",
+      "norm_label": "wrist stls",
+      "source_file": "hardware/stl/Munequilla_01.stl",
+      "type": "Hardware"
+    },
+    {
+      "id": "Gripper_Actuator",
+      "label": "Gripper Actuator",
+      "community": 0,
+      "confidence": "EXTRACTED",
+      "description": "Parallel jaw gripper actuated by MG90S servo",
+      "file_type": "concept",
+      "norm_label": "gripper actuator",
+      "source_file": "docs/mechanical_dimensions.md",
+      "type": "Actuator"
+    },
+    {
+      "id": "Gripper_STLs",
+      "label": "Gripper STLs",
+      "community": 0,
+      "confidence": "EXTRACTED",
+      "description": "Pinza_01 to 05, Brida_Pinza_01, Engranaje_01 and 02 gripper mechanics",
+      "file_type": "concept",
+      "norm_label": "gripper stls",
+      "source_file": "hardware/stl/Pinza_01.stl",
+      "type": "Hardware"
+    },
+    {
+      "id": "J4_Wrist_Pitch",
+      "label": "J4 Wrist Pitch",
+      "community": 0,
+      "confidence": "EXTRACTED",
+      "description": "Wrist pitch joint actuated by MG996R, rotating around Y [0, 1, 0]",
+      "file_type": "concept",
+      "norm_label": "j4 wrist pitch",
+      "source_file": "docs/mechanical_dimensions.md",
+      "type": "Joint"
+    },
+    {
+      "id": "J5_Wrist_Roll",
+      "label": "J5 Wrist Roll",
+      "community": 0,
+      "confidence": "EXTRACTED",
+      "description": "Wrist roll joint actuated by MG996R, rotating around X [1, 0, 0]",
+      "file_type": "concept",
+      "norm_label": "j5 wrist roll",
+      "source_file": "docs/mechanical_dimensions.md",
+      "type": "Joint"
+    },
+    {
+      "id": "docs_engineering_roadmap",
+      "label": "Engineering Roadmap",
+      "community": 1,
+      "confidence": "EXTRACTED",
+      "description": "10-stage sequential engineering milestone gate from reverse engineering to autonomous manipulation",
+      "file_type": "concept",
+      "norm_label": "engineering roadmap",
+      "source_file": "docs/engineering_roadmap.md",
+      "type": "Document"
+    },
+    {
+      "id": "Devotics_Arm_V1",
+      "label": "Devotics Arm V1",
+      "community": 1,
+      "confidence": "EXTRACTED",
+      "description": "5-DOF articulated desktop research robotic arm with gripper",
+      "file_type": "concept",
+      "norm_label": "devotics arm v1",
+      "source_file": "README.md",
+      "type": "System"
+    },
+    {
+      "id": "J1_Base_Yaw",
+      "label": "J1 Base Yaw",
+      "community": 1,
+      "confidence": "EXTRACTED",
+      "description": "Base yaw rotation actuated by MG996R servo, rotating around Z [0, 0, 1]",
+      "file_type": "concept",
+      "norm_label": "j1 base yaw",
+      "source_file": "docs/mechanical_dimensions.md",
+      "type": "Joint"
+    },
+    {
+      "id": "Base_Assembly_STLs",
+      "label": "Base Assembly STLs",
+      "community": 1,
+      "confidence": "EXTRACTED",
+      "description": "Base_01.stl, Base_02.stl, Base_03.stl, Base_04.stl structural parts",
+      "file_type": "concept",
+      "norm_label": "base assembly stls",
+      "source_file": "hardware/stl/Base_01.stl",
+      "type": "Hardware"
+    },
+    {
+      "id": "PCA9685_PWM_Driver",
+      "label": "PCA9685 PWM Driver",
+      "community": 2,
+      "confidence": "EXTRACTED",
+      "description": "16-channel 12-bit I2C PWM driver delivering 50Hz pulses to MG996R and MG90S servos",
+      "file_type": "concept",
+      "norm_label": "pca9685 pwm driver",
+      "source_file": "docs/architecture.md",
+      "type": "Hardware"
+    },
+    {
+      "id": "Power_Supply_Unit",
+      "label": "12V 20A SMPS & 6V Buck",
+      "community": 2,
+      "confidence": "EXTRACTED",
+      "description": "High-current power distribution rail delivering ~6V regulated DC with 4700uF smoothing cap",
+      "file_type": "concept",
+      "norm_label": "12v 20a smps & 6v buck",
+      "source_file": "docs/architecture.md",
+      "type": "Hardware"
+    },
+    {
+      "id": "ROS2_Jazzy_Workstation",
+      "label": "ROS 2 Jazzy Workstation",
+      "community": 2,
+      "confidence": "EXTRACTED",
+      "description": "Host workstation running robot_state_publisher, ros2_control, and MoveIt 2",
+      "file_type": "concept",
+      "norm_label": "ros 2 jazzy workstation",
+      "source_file": "docs/architecture.md",
+      "type": "Software"
+    },
+    {
+      "id": "ESP32_Controller",
+      "label": "ESP32 Controller",
+      "community": 2,
+      "confidence": "EXTRACTED",
+      "description": "Primary embedded microcontroller managing trajectory interpolation and PWM timing",
+      "file_type": "concept",
+      "norm_label": "esp32 controller",
+      "source_file": "docs/architecture.md",
+      "type": "Hardware"
+    },
+    {
+      "id": "Forearm_STLs",
+      "label": "Forearm STLs",
+      "community": 3,
+      "confidence": "EXTRACTED",
+      "description": "Ante_Brazo_01.stl, Control_AnteBrazo02.stl forearm structural parts (~188mm)",
+      "file_type": "concept",
+      "norm_label": "forearm stls",
+      "source_file": "hardware/stl/Ante_Brazo_01.stl",
+      "type": "Hardware"
+    },
+    {
+      "id": "Upper_Arm_STLs",
+      "label": "Upper Arm STLs",
+      "community": 3,
+      "confidence": "EXTRACTED",
+      "description": "Brazo_01.stl, Brazo_02.stl, Brazo_03.stl upper arm structural parts (~245mm)",
+      "file_type": "concept",
+      "norm_label": "upper arm stls",
+      "source_file": "hardware/stl/Brazo_01.stl",
+      "type": "Hardware"
+    },
+    {
+      "id": "J3_Elbow_Pitch",
+      "label": "J3 Elbow Pitch",
+      "community": 3,
+      "confidence": "EXTRACTED",
+      "description": "Elbow pitch joint actuated by MG996R, linking upper arm to forearm",
+      "file_type": "concept",
+      "norm_label": "j3 elbow pitch",
+      "source_file": "docs/mechanical_dimensions.md",
+      "type": "Joint"
+    },
+    {
+      "id": "J2_Shoulder_Pitch",
+      "label": "J2 Shoulder Pitch",
+      "community": 3,
+      "confidence": "EXTRACTED",
+      "description": "Shoulder pitch joint actuated by MG996R with dual traction springs for gravity compensation",
+      "file_type": "concept",
+      "norm_label": "j2 shoulder pitch",
+      "source_file": "docs/mechanical_dimensions.md",
+      "type": "Joint"
+    }
+  ],
+  "links": [
+    {
+      "source": "ROS2_Jazzy_Workstation",
+      "target": "ESP32_Controller",
+      "relation": "COMMANDS_VIA_SERIAL",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "J1_Base_Yaw",
+      "target": "J2_Shoulder_Pitch",
+      "relation": "CONNECTS_TO",
+      "confidence_score": 1.0,
+      "source_file": "docs/mechanical_dimensions.md"
+    },
+    {
+      "source": "J2_Shoulder_Pitch",
+      "target": "J3_Elbow_Pitch",
+      "relation": "CONNECTS_TO",
+      "confidence_score": 1.0,
+      "source_file": "docs/mechanical_dimensions.md"
+    },
+    {
+      "source": "J3_Elbow_Pitch",
+      "target": "J4_Wrist_Pitch",
+      "relation": "CONNECTS_TO",
+      "confidence_score": 1.0,
+      "source_file": "docs/mechanical_dimensions.md"
+    },
+    {
+      "source": "J4_Wrist_Pitch",
+      "target": "J5_Wrist_Roll",
+      "relation": "CONNECTS_TO",
+      "confidence_score": 1.0,
+      "source_file": "docs/mechanical_dimensions.md"
+    },
+    {
+      "source": "J5_Wrist_Roll",
+      "target": "Gripper_Actuator",
+      "relation": "CONNECTS_TO",
+      "confidence_score": 1.0,
+      "source_file": "docs/mechanical_dimensions.md"
+    },
+    {
+      "source": "Devotics_Arm_V1",
+      "target": "J1_Base_Yaw",
+      "relation": "CONTAINS_JOINT",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    },
+    {
+      "source": "ESP32_Controller",
+      "target": "PCA9685_PWM_Driver",
+      "relation": "CONTROLS_VIA_I2C",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "PCA9685_PWM_Driver",
+      "target": "Gripper_Actuator",
+      "relation": "DRIVES_PWM",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "PCA9685_PWM_Driver",
+      "target": "J1_Base_Yaw",
+      "relation": "DRIVES_PWM",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "PCA9685_PWM_Driver",
+      "target": "J2_Shoulder_Pitch",
+      "relation": "DRIVES_PWM",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "PCA9685_PWM_Driver",
+      "target": "J3_Elbow_Pitch",
+      "relation": "DRIVES_PWM",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "PCA9685_PWM_Driver",
+      "target": "J4_Wrist_Pitch",
+      "relation": "DRIVES_PWM",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "PCA9685_PWM_Driver",
+      "target": "J5_Wrist_Roll",
+      "relation": "DRIVES_PWM",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "Devotics_Arm_V1",
+      "target": "docs_engineering_roadmap",
+      "relation": "GOVERNED_BY",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    },
+    {
+      "source": "Base_Assembly_STLs",
+      "target": "J1_Base_Yaw",
+      "relation": "PHYSICAL_STRUCTURE_FOR",
+      "confidence_score": 1.0,
+      "source_file": "hardware/stl/Base_01.stl"
+    },
+    {
+      "source": "Forearm_STLs",
+      "target": "J3_Elbow_Pitch",
+      "relation": "PHYSICAL_STRUCTURE_FOR",
+      "confidence_score": 1.0,
+      "source_file": "hardware/stl/Ante_Brazo_01.stl"
+    },
+    {
+      "source": "Gripper_STLs",
+      "target": "Gripper_Actuator",
+      "relation": "PHYSICAL_STRUCTURE_FOR",
+      "confidence_score": 1.0,
+      "source_file": "hardware/stl/Pinza_01.stl"
+    },
+    {
+      "source": "Upper_Arm_STLs",
+      "target": "J2_Shoulder_Pitch",
+      "relation": "PHYSICAL_STRUCTURE_FOR",
+      "confidence_score": 1.0,
+      "source_file": "hardware/stl/Brazo_01.stl"
+    },
+    {
+      "source": "Wrist_STLs",
+      "target": "J4_Wrist_Pitch",
+      "relation": "PHYSICAL_STRUCTURE_FOR",
+      "confidence_score": 1.0,
+      "source_file": "hardware/stl/Munequilla_01.stl"
+    },
+    {
+      "source": "Power_Supply_Unit",
+      "target": "ESP32_Controller",
+      "relation": "POWERS_LOGIC",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    },
+    {
+      "source": "Power_Supply_Unit",
+      "target": "PCA9685_PWM_Driver",
+      "relation": "POWERS_SERVO_RAIL",
+      "confidence_score": 1.0,
+      "source_file": "docs/architecture.md"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "839029b9af20f629eac9ef593a0761fa6ad41d76"
+}
