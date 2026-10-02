@@ -1,7 +1,7 @@
 # Graph Report - devotics_arm_v1  (2026-10-02)
 
 ## Corpus Check
-- Corpus is ~2,241 words - fits in a single context window. You may not need a graph.
+- Corpus is ~2,584 words - fits in a single context window. You may not need a graph.
 
 ## Summary
 - 17 nodes · 22 edges · 4 communities
