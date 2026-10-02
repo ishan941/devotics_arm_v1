@@ -87,5 +87,35 @@
     <dynamics damping="0.1" friction="0.1" />
   </joint>
 
+    <!-- ========================================== -->
+  <!-- Base Rotation Link (Turret)                -->
+  <!-- ========================================== -->
+  <link name="base_rotation_link">
+    <!-- Turret turntable disk -->
+    <visual>
+      <origin xyz="0 0 0.006" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.050" length="0.012" />
+      </geometry>
+      <material name="devotics_orange" />
+    </visual>
+    <!-- Shoulder support columns (80mm rise to J2 pivot) -->
+    <visual>
+      <origin xyz="0 0 0.046" rpy="0 0 0" />
+      <geometry>
+        <box size="0.045 0.075 0.068" />
+      </geometry>
+      <material name="dark_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.040" rpy="0 0 0" />
+      <geometry>
+        <box size="0.060 0.080 0.080" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.28" x="0.060" y="0.080" z="0.080" />
+  </link>
+
+
 
 </robot>
