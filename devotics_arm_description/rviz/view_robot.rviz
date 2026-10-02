@@ -1,6 +1,6 @@
 Panels:
   - Class: rviz_common/Displays
-    Help Height: 78
+    Help Height: 138
     Name: Displays
     Property Tree Widget:
       Expanded:
@@ -9,16 +9,17 @@ Panels:
         - /RobotModel1
         - /TF1
       Splitter Ratio: 0.5
+    Tree Height: 1628
 Visualization Manager:
   Class: ""
   Displays:
     - Alpha: 0.5
-      Cell Size: 0.1
+      Cell Size: 0.10000000149011612
       Class: rviz_default_plugins/Grid
       Color: 160; 160; 164
       Enabled: true
       Line Style:
-        Line Width: 0.03
+        Line Width: 0.029999999329447746
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
@@ -44,6 +45,66 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_rotation_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left_finger_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_finger_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wrist_pitch_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_roll_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -51,14 +112,53 @@ Visualization Manager:
       Visual Enabled: true
     - Class: rviz_default_plugins/TF
       Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
-        All Frames Enabled: true
-      Marker Scale: 0.15
+        All Enabled: true
+        base_link:
+          Value: true
+        base_rotation_link:
+          Value: true
+        forearm_link:
+          Value: true
+        gripper_base_link:
+          Value: true
+        gripper_left_finger_link:
+          Value: true
+        gripper_right_finger_link:
+          Value: true
+        tool0:
+          Value: true
+        upper_arm_link:
+          Value: true
+        world:
+          Value: true
+        wrist_pitch_link:
+          Value: true
+        wrist_roll_link:
+          Value: true
+      Marker Scale: 0.15000000596046448
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
+      Tree:
+        world:
+          base_link:
+            base_rotation_link:
+              upper_arm_link:
+                forearm_link:
+                  wrist_pitch_link:
+                    wrist_roll_link:
+                      gripper_base_link:
+                        gripper_left_finger_link:
+                          {}
+                        gripper_right_finger_link:
+                          {}
+                        tool0:
+                          {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -74,31 +174,39 @@ Visualization Manager:
     - Class: rviz_default_plugins/Select
     - Class: rviz_default_plugins/FocusCamera
   Transformation:
-    Active: true
-    Class: rviz_default_plugins/TF
+    Current:
+      Class: rviz_default_plugins/TF
   Value: true
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.0
+      Distance: 1.208145022392273
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
       Focal Point:
-        X: 0.0
-        Y: 0.0
-        Z: 0.1
+        X: 0
+        Y: 0
+        Z: 0.10000000149011612
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.01
-      Pitch: 0.35
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.2849997282028198
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz_default_plugins)
-      Yaw: 0.8
+      Yaw: 5.751370429992676
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 840
-  Width: 1200
-  X: 100
-  Y: 100
+  Height: 2040
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000001f400000758fc0200000001fb000000100044006900730070006c0061007900730100000070000007580000018600ffffff00000ba40000075800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Width: 3492
+  X: 108
+  Y: 64

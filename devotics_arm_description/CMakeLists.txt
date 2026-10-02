@@ -5,7 +5,7 @@ find_package(ament_cmake REQUIRED)
 
 # Install resource directories to package share
 install(
-  DIRECTORY launch rviz urdf
+  DIRECTORY launch rviz urdf meshes
   DESTINATION share/${PROJECT_NAME}
 )
 

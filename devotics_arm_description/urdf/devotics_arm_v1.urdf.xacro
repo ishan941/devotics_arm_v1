@@ -46,23 +46,23 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <!-- ========================================== -->
+    <!-- ========================================== -->
   <!-- Base Link (Stationary Baseplate + Housing) -->
   <!-- ========================================== -->
   <link name="base_link">
-    <!-- Base mounting plate (150x150x12 mm) -->
+    <!-- Visual 1: Base Mount Plate (Base_02.stl) -->
     <visual>
-      <origin xyz="0 0 0.006" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
       <geometry>
-        <box size="0.150 0.150 0.012" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base_02.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="dark_gray" />
     </visual>
-    <!-- Bearing & J1 housing (120mm diam, 43mm rise) -->
+    <!-- Visual 2: Base Bearing Housing (Base_01.stl) -->
     <visual>
-      <origin xyz="0 0 0.0335" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
       <geometry>
-        <cylinder radius="0.060" length="0.043" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base_01.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="light_gray" />
     </visual>
@@ -74,6 +74,7 @@
     </collision>
     <xacro:cylinder_inertia m="0.45" r="0.075" h="0.055" />
   </link>
+
 
   <!-- ========================================== -->
   <!-- Joint 1: Base Yaw (MG996R)                 -->
@@ -87,25 +88,17 @@
     <dynamics damping="0.1" friction="0.1" />
   </joint>
 
-    <!-- ========================================== -->
+   <!-- ========================================== -->
   <!-- Base Rotation Link (Turret)                -->
   <!-- ========================================== -->
   <link name="base_rotation_link">
-    <!-- Turret turntable disk -->
+    <!-- Turret Chassis (Base_03.stl) -->
     <visual>
-      <origin xyz="0 0 0.006" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
       <geometry>
-        <cylinder radius="0.050" length="0.012" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base_03.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="devotics_orange" />
-    </visual>
-    <!-- Shoulder support columns (80mm rise to J2 pivot) -->
-    <visual>
-      <origin xyz="0 0 0.046" rpy="0 0 0" />
-      <geometry>
-        <box size="0.045 0.075 0.068" />
-      </geometry>
-      <material name="dark_gray" />
     </visual>
     <collision>
       <origin xyz="0 0 0.040" rpy="0 0 0" />
@@ -115,6 +108,9 @@
     </collision>
     <xacro:box_inertia m="0.28" x="0.060" y="0.080" z="0.080" />
   </link>
+
+
+
 
   
     <!-- ========================================== -->
@@ -129,33 +125,16 @@
     <dynamics damping="0.15" friction="0.1" />
   </joint>
 
-  <!-- ========================================== -->
+   <!-- ========================================== -->
   <!-- Upper Arm Link (185 mm Pivot-to-Pivot)     -->
   <!-- ========================================== -->
   <link name="upper_arm_link">
-    <!-- Shoulder pivot boss -->
     <visual>
       <origin xyz="0 0 0" rpy="1.5708 0 0" />
       <geometry>
-        <cylinder radius="0.025" length="0.050" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Brazo_01.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="metallic_silver" />
-    </visual>
-    <!-- Main upper arm bone (185mm center span) -->
-    <visual>
-      <origin xyz="0 0 ${J2_TO_J3_LEN / 2.0}" rpy="0 0 0" />
-      <geometry>
-        <box size="0.035 0.050 ${J2_TO_J3_LEN}" />
-      </geometry>
-      <material name="devotics_orange" />
-    </visual>
-    <!-- Elbow pivot boss -->
-    <visual>
-      <origin xyz="0 0 ${J2_TO_J3_LEN}" rpy="1.5708 0 0" />
-      <geometry>
-        <cylinder radius="0.025" length="0.050" />
-      </geometry>
-      <material name="metallic_silver" />
+      <material name="light_gray" />
     </visual>
     <collision>
       <origin xyz="0 0 ${J2_TO_J3_LEN / 2.0}" rpy="0 0 0" />
@@ -165,6 +144,7 @@
     </collision>
     <xacro:box_inertia m="0.25" x="0.050" y="0.060" z="${J2_TO_J3_LEN + 0.050}" />
   </link>
+
 
     <!-- ========================================== -->
   <!-- Joint 3: Elbow Pitch (MG996R)              -->
