@@ -116,6 +116,274 @@
     <xacro:box_inertia m="0.28" x="0.060" y="0.080" z="0.080" />
   </link>
 
+  
+    <!-- ========================================== -->
+  <!-- Joint 2: Shoulder Pitch (MG996R + Springs) -->
+  <!-- ========================================== -->
+  <joint name="joint_2" type="revolute">
+    <parent link="base_rotation_link" />
+    <child link="upper_arm_link" />
+    <origin xyz="0 0 ${J1_TO_J2_Z}" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="3.0" velocity="3.14" />
+    <dynamics damping="0.15" friction="0.1" />
+  </joint>
+
+  <!-- ========================================== -->
+  <!-- Upper Arm Link (185 mm Pivot-to-Pivot)     -->
+  <!-- ========================================== -->
+  <link name="upper_arm_link">
+    <!-- Shoulder pivot boss -->
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.025" length="0.050" />
+      </geometry>
+      <material name="metallic_silver" />
+    </visual>
+    <!-- Main upper arm bone (185mm center span) -->
+    <visual>
+      <origin xyz="0 0 ${J2_TO_J3_LEN / 2.0}" rpy="0 0 0" />
+      <geometry>
+        <box size="0.035 0.050 ${J2_TO_J3_LEN}" />
+      </geometry>
+      <material name="devotics_orange" />
+    </visual>
+    <!-- Elbow pivot boss -->
+    <visual>
+      <origin xyz="0 0 ${J2_TO_J3_LEN}" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.025" length="0.050" />
+      </geometry>
+      <material name="metallic_silver" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${J2_TO_J3_LEN / 2.0}" rpy="0 0 0" />
+      <geometry>
+        <box size="0.050 0.060 ${J2_TO_J3_LEN + 0.050}" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.25" x="0.050" y="0.060" z="${J2_TO_J3_LEN + 0.050}" />
+  </link>
+
+    <!-- ========================================== -->
+  <!-- Joint 3: Elbow Pitch (MG996R)              -->
+  <!-- ========================================== -->
+  <joint name="joint_3" type="revolute">
+    <parent link="upper_arm_link" />
+    <child link="forearm_link" />
+    <origin xyz="0 0 ${J2_TO_J3_LEN}" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.0944" upper="2.0944" effort="2.5" velocity="3.14" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <!-- ========================================== -->
+  <!-- Forearm Link (138 mm Pivot-to-Pivot)       -->
+  <!-- ========================================== -->
+  <link name="forearm_link">
+    <!-- Elbow hinge boss -->
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.022" length="0.045" />
+      </geometry>
+      <material name="metallic_silver" />
+    </visual>
+    <!-- Main forearm body (138mm span) -->
+    <visual>
+      <origin xyz="0 0 ${J3_TO_J4_LEN / 2.0}" rpy="0 0 0" />
+      <geometry>
+        <box size="0.030 0.045 ${J3_TO_J4_LEN}" />
+      </geometry>
+      <material name="dark_gray" />
+    </visual>
+    <!-- Wrist hinge boss -->
+    <visual>
+      <origin xyz="0 0 ${J3_TO_J4_LEN}" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.020" length="0.045" />
+      </geometry>
+      <material name="metallic_silver" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${J3_TO_J4_LEN / 2.0}" rpy="0 0 0" />
+      <geometry>
+        <box size="0.045 0.055 ${J3_TO_J4_LEN + 0.040}" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.20" x="0.045" y="0.055" z="${J3_TO_J4_LEN + 0.040}" />
+  </link>
+
+  
+  <!-- ========================================== -->
+  <!-- Joint 4: Wrist Pitch (MG996R)              -->
+  <!-- ========================================== -->
+  <joint name="joint_4" type="revolute">
+    <parent link="forearm_link" />
+    <child link="wrist_pitch_link" />
+    <origin xyz="0 0 ${J3_TO_J4_LEN}" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="2.0" velocity="3.14" />
+    <dynamics damping="0.08" friction="0.08" />
+  </joint>
+
+  <!-- ========================================== -->
+  <!-- Wrist Pitch Link (65 mm offset to roll)    -->
+  <!-- ========================================== -->
+  <link name="wrist_pitch_link">
+    <!-- Pitch hinge boss -->
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.018" length="0.040" />
+      </geometry>
+      <material name="devotics_orange" />
+    </visual>
+    <!-- Housing body projecting forward along X -->
+    <visual>
+      <origin xyz="${J4_TO_J5_OFFSET / 2.0} 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${J4_TO_J5_OFFSET} 0.042 0.045" />
+      </geometry>
+      <material name="devotics_orange" />
+    </visual>
+    <collision>
+      <origin xyz="${J4_TO_J5_OFFSET / 2.0} 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${J4_TO_J5_OFFSET} 0.045 0.045" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.12" x="${J4_TO_J5_OFFSET}" y="0.045" z="0.045" />
+  </link>
+
+  <!-- ========================================== -->
+  <!-- Joint 5: Wrist Roll (MG996R)               -->
+  <!-- ========================================== -->
+  <joint name="joint_5" type="revolute">
+    <parent link="wrist_pitch_link" />
+    <child link="wrist_roll_link" />
+    <origin xyz="${J4_TO_J5_OFFSET} 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="1.5" velocity="3.14" />
+    <dynamics damping="0.05" friction="0.05" />
+  </joint>
+
+  <!-- ========================================== -->
+  <!-- Wrist Roll Link (Flange)                   -->
+  <!-- ========================================== -->
+  <link name="wrist_roll_link">
+    <visual>
+      <origin xyz="${J5_TO_GRIPPER_BASE / 2.0} 0 0" rpy="0 1.5708 0" />
+      <geometry>
+        <cylinder radius="0.018" length="${J5_TO_GRIPPER_BASE}" />
+      </geometry>
+      <material name="metallic_silver" />
+    </visual>
+    <collision>
+      <origin xyz="${J5_TO_GRIPPER_BASE / 2.0} 0 0" rpy="0 1.5708 0" />
+      <geometry>
+        <cylinder radius="0.020" length="${J5_TO_GRIPPER_BASE}" />
+      </geometry>
+    </collision>
+    <xacro:cylinder_inertia m="0.04" r="0.020" h="${J5_TO_GRIPPER_BASE}" />
+  </link>
+
+    <!-- ========================================== -->
+  <!-- Fixed Flange Joint to Gripper Base         -->
+  <!-- ========================================== -->
+  <joint name="joint_gripper_base" type="fixed">
+    <parent link="wrist_roll_link" />
+    <child link="gripper_base_link" />
+    <origin xyz="${J5_TO_GRIPPER_BASE} 0 0" rpy="0 0 0" />
+  </joint>
+
+  <!-- ========================================== -->
+  <!-- Gripper Base Body (MG90S housing)          -->
+  <!-- ========================================== -->
+  <link name="gripper_base_link">
+    <visual>
+      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.040 0.045 0.035" />
+      </geometry>
+      <material name="dark_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.040 0.045 0.035" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.06" x="0.040" y="0.045" z="0.035" />
+  </link>
+
+  <!-- ========================================== -->
+  <!-- Actuated Gripper Jaws (Left + Right Mimic) -->
+  <!-- ========================================== -->
+  <joint name="gripper_left_finger_joint" type="prismatic">
+    <parent link="gripper_base_link" />
+    <child link="gripper_left_finger_link" />
+    <origin xyz="0.040 0.015 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.0" upper="0.025" effort="1.0" velocity="0.1" />
+  </joint>
+
+  <link name="gripper_left_finger_link">
+    <visual>
+      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.040 0.006 0.015" />
+      </geometry>
+      <material name="light_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.040 0.006 0.015" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.01" x="0.040" y="0.006" z="0.015" />
+  </link>
+
+  <joint name="gripper_right_finger_joint" type="prismatic">
+    <parent link="gripper_base_link" />
+    <child link="gripper_right_finger_link" />
+    <origin xyz="0.040 -0.015 0" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0.0" upper="0.025" effort="1.0" velocity="0.1" />
+    <mimic joint="gripper_left_finger_joint" multiplier="1.0" offset="0.0" />
+  </joint>
+
+  <link name="gripper_right_finger_link">
+    <visual>
+      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.040 0.006 0.015" />
+      </geometry>
+      <material name="light_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.040 0.006 0.015" />
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="0.01" x="0.040" y="0.006" z="0.015" />
+  </link>
+
+  <!-- ========================================== -->
+  <!-- TCP / Tool0 Frame (Grasp Contact Center)   -->
+  <!-- ========================================== -->
+  <joint name="tcp_joint" type="fixed">
+    <parent link="gripper_base_link" />
+    <child tool="tool" link="tool0" />
+    <origin xyz="${GRIPPER_BASE_TO_TCP} 0 0" rpy="0 0 0" />
+  </joint>
+
+  <link name="tool0" />
+
+
 
 
 </robot>
