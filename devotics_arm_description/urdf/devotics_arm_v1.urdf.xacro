@@ -5,7 +5,7 @@
   <xacro:include filename="materials.xacro" />
 
   <!-- 2. Kinematic Constants (Meters) — From Stage 1 Reverse Engineering -->
-  <xacro:property name="BASE_TO_J1_Z" value="0.055" />       <!-- 55.0 mm: Table to Yaw plane -->
+  <xacro:property name="BASE_TO_J1_Z" value="0.012" />       <!-- 55.0 mm: Table to Yaw plane -->
   <xacro:property name="J1_TO_J2_Z" value="0.080" />         <!-- 80.0 mm: Turret rise to Shoulder -->
   <xacro:property name="J2_TO_J3_LEN" value="0.185" />       <!-- 185.0 mm: Upper arm pivot-to-pivot -->
   <xacro:property name="J3_TO_J4_LEN" value="0.138" />       <!-- 138.0 mm: Forearm pivot-to-pivot -->
@@ -46,11 +46,11 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-    <!-- ========================================== -->
-  <!-- Base Link (Stationary Baseplate + Housing) -->
+  <!-- ========================================== -->
+  <!-- Base Link (Stationary Table Mount Flange)  -->
   <!-- ========================================== -->
   <link name="base_link">
-    <!-- Visual 1: Base Mount Plate (Base_02.stl) -->
+    <!-- Base Mount Plate (Base_02.stl) -->
     <visual>
       <origin xyz="0 0 0" rpy="1.5708 0 0" />
       <geometry>
@@ -58,22 +58,15 @@
       </geometry>
       <material name="dark_gray" />
     </visual>
-    <!-- Visual 2: Base Bearing Housing (Base_01.stl) -->
-    <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 0" />
-      <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Base_01.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="light_gray" />
-    </visual>
     <collision>
-      <origin xyz="0 0 0.0275" rpy="0 0 0" />
+      <origin xyz="0 0 0.006" rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.075" length="0.055" />
+        <cylinder radius="0.075" length="0.012" />
       </geometry>
     </collision>
-    <xacro:cylinder_inertia m="0.45" r="0.075" h="0.055" />
+    <xacro:cylinder_inertia m="0.15" r="0.075" h="0.012" />
   </link>
+
 
 
   <!-- ========================================== -->
@@ -87,14 +80,29 @@
     <limit lower="-2.61799" upper="2.61799" effort="2.5" velocity="3.14" />
     <dynamics damping="0.1" friction="0.1" />
   </joint>
-
-   <!-- ========================================== -->
-  <!-- Base Rotation Link (Turret)                -->
+  <!-- ========================================== -->
+  <!-- Base Rotation Link (Drum + 2 Side Towers)  -->
   <!-- ========================================== -->
   <link name="base_rotation_link">
-    <!-- Turret Chassis (Base_03.stl) -->
+    <!-- Visual 1: Main Rotating Housing Drum (Base_01.stl) -->
     <visual>
       <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base_01.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark_gray" />
+    </visual>
+    <!-- Visual 2: Left Tower (aligned with Left shelf) -->
+    <visual>
+      <origin xyz="0 0.0525 0" rpy="1.5708 0 1.5708" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base_03.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="devotics_orange" />
+    </visual>
+    <!-- Visual 3: Right Tower (aligned with Right shelf) -->
+    <visual>
+      <origin xyz="0 -0.0525 0" rpy="1.5708 0 -1.5708" />
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Base_03.stl" scale="0.001 0.001 0.001" />
       </geometry>
@@ -103,11 +111,15 @@
     <collision>
       <origin xyz="0 0 0.040" rpy="0 0 0" />
       <geometry>
-        <box size="0.060 0.080 0.080" />
+        <cylinder radius="0.060" length="0.080" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.28" x="0.060" y="0.080" z="0.080" />
+    <xacro:cylinder_inertia m="0.45" r="0.060" h="0.080" />
   </link>
+
+
+
+
 
 
 
