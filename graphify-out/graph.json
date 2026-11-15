@@ -9,12 +9,25 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community": 2,
+      "community_name": "pick_and_place.py",
       "file_type": "code",
       "norm_label": "devoticsv1pickandplace",
       "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
       "source_location": "L20"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "label": "DevoticsV1ESP32Bridge",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
+      "file_type": "code",
+      "norm_label": "devoticsv1esp32bridge",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L22"
     },
     {
       "id": "devotics_arm_moveit_config_launch_demo_launch_generate_launch_description",
@@ -89,6 +102,66 @@
       "source_location": "L5"
     },
     {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_move_arm",
+      "label": ".move_arm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "code",
+      "norm_label": ".move_arm()",
+      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
+      "source_location": "L89"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_move_gripper",
+      "label": ".move_gripper()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "code",
+      "norm_label": ".move_gripper()",
+      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
+      "source_location": "L113"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_publish_object_marker",
+      "label": ".publish_object_marker()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "code",
+      "norm_label": ".publish_object_marker()",
+      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_run_cycle",
+      "label": ".run_cycle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "code",
+      "norm_label": ".run_cycle()",
+      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
+      "source_location": "L137"
+    },
+    {
       "id": "devotics_arm_moveit_config_scripts_pick_and_place_main",
       "label": "main()",
       "_callable": true,
@@ -113,64 +186,88 @@
       "source_location": "L11"
     },
     {
-      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_init",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_connect_esp32",
+      "label": ".connect_esp32()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
+      "file_type": "code",
+      "norm_label": ".connect_esp32()",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L68"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_gripper_to_deg",
+      "label": ".gripper_to_deg()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
+      "file_type": "code",
+      "norm_label": ".gripper_to_deg()",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L94"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_init",
       "label": ".__init__()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
       "file_type": "code",
       "norm_label": ".__init__()",
-      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
-      "source_location": "L21"
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L23"
     },
     {
-      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_move_arm",
-      "label": ".move_arm()",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_joint_state_callback",
+      "label": ".joint_state_callback()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
       "file_type": "code",
-      "norm_label": ".move_arm()",
-      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
-      "source_location": "L89"
+      "norm_label": ".joint_state_callback()",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L83"
     },
     {
-      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_move_gripper",
-      "label": ".move_gripper()",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_rad_to_deg",
+      "label": ".rad_to_deg()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
       "file_type": "code",
-      "norm_label": ".move_gripper()",
-      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
-      "source_location": "L113"
+      "norm_label": ".rad_to_deg()",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L88"
     },
     {
-      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_publish_object_marker",
-      "label": ".publish_object_marker()",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_stream_to_esp32",
+      "label": ".stream_to_esp32()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
       "file_type": "code",
-      "norm_label": ".publish_object_marker()",
-      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
-      "source_location": "L57"
+      "norm_label": ".stream_to_esp32()",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L104"
     },
     {
-      "id": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_run_cycle",
-      "label": ".run_cycle()",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_main",
+      "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
       "file_type": "code",
-      "norm_label": ".run_cycle()",
-      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
-      "source_location": "L137"
+      "norm_label": "main()",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L126"
     },
     {
       "id": "devotics_arm_moveit_config_launch_demo_launch",
@@ -250,6 +347,17 @@
       "source_location": "L1"
     },
     {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_py_node",
+      "label": "Node",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "code",
+      "norm_label": "node",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "devotics_arm_moveit_config_scripts_pick_and_place_rationale_2",
       "label": "Devotics Arm V1 \u2014 Autonomous Pick & Place Mission Node Executes a complete\u2026",
       "_origin": "ast",
@@ -259,6 +367,17 @@
       "norm_label": "devotics arm v1 \u2014 autonomous pick & place mission node executes a complete...",
       "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
       "source_location": "L2"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_pick_and_place_rationale_58",
+      "label": "Publishes the 3D target cube in RViz (either on the table or attached to tool0).",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pick_and_place.py",
+      "file_type": "rationale",
+      "norm_label": "publishes the 3d target cube in rviz (either on the table or attached to tool0).",
+      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
+      "source_location": "L58"
     },
     {
       "id": "devotics_arm_description_launch_view_robot_launch",
@@ -272,26 +391,26 @@
       "source_location": "L1"
     },
     {
-      "id": "node",
-      "label": "Node",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "label": "esp32_bridge.py",
       "_origin": "ast",
       "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community_name": "esp32_bridge.py",
       "file_type": "code",
-      "norm_label": "node",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "esp32_bridge.py",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L1"
     },
     {
-      "id": "devotics_arm_moveit_config_scripts_pick_and_place_rationale_58",
-      "label": "Publishes the 3D target cube in RViz (either on the table or attached to tool0).",
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_rationale_2",
+      "label": "Devotics Arm V1 \u2014 Real-Time MoveIt 2 to ESP32 Physical Hardware Bridge\u2026",
       "_origin": "ast",
       "community": 4,
-      "community_name": "DevoticsV1PickAndPlace",
+      "community_name": "esp32_bridge.py",
       "file_type": "rationale",
-      "norm_label": "publishes the 3d target cube in rviz (either on the table or attached to tool0).",
-      "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
-      "source_location": "L58"
+      "norm_label": "devotics arm v1 \u2014 real-time moveit 2 to esp32 physical hardware bridge...",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L2"
     },
     {
       "id": "agents",
@@ -480,6 +599,28 @@
       "norm_label": "workflow: graphify",
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L6"
+    },
+    {
+      "id": "devotics_arm_moveit_config_scripts_esp32_bridge_py_node",
+      "label": "Node",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
+      "file_type": "code",
+      "norm_label": "node",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "jointstate",
+      "label": "JointState",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "DevoticsV1ESP32Bridge",
+      "file_type": "code",
+      "norm_label": "jointstate",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "docs_engineering_roadmap",
@@ -705,6 +846,7 @@
     {
       "id": "moveit_configs_utils",
       "label": "moveit_configs_utils",
+      "_origin": "semantic",
       "community": 1,
       "community_name": "moveit_configs_utils",
       "external": true,
@@ -716,6 +858,7 @@
     {
       "id": "moveit_configs_utils_launches",
       "label": "moveit_configs_utils_launches",
+      "_origin": "semantic",
       "community": 1,
       "community_name": "moveit_configs_utils",
       "external": true,
@@ -725,19 +868,9 @@
       "type": "external"
     },
     {
-      "id": "argparse",
-      "label": "argparse",
-      "community": 2,
-      "community_name": "pick_and_place.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "argparse",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "builtin_interfaces_msg",
       "label": "builtin_interfaces_msg",
+      "_origin": "semantic",
       "community": 2,
       "community_name": "pick_and_place.py",
       "external": true,
@@ -749,6 +882,7 @@
     {
       "id": "control_msgs_action",
       "label": "control_msgs_action",
+      "_origin": "semantic",
       "community": 2,
       "community_name": "pick_and_place.py",
       "external": true,
@@ -758,19 +892,9 @@
       "type": "external"
     },
     {
-      "id": "rclpy",
-      "label": "rclpy",
-      "community": 2,
-      "community_name": "pick_and_place.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "rclpy",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "rclpy_action",
       "label": "rclpy_action",
+      "_origin": "semantic",
       "community": 2,
       "community_name": "pick_and_place.py",
       "external": true,
@@ -780,19 +904,9 @@
       "type": "external"
     },
     {
-      "id": "rclpy_node",
-      "label": "rclpy_node",
-      "community": 2,
-      "community_name": "pick_and_place.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "rclpy_node",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "time",
       "label": "time",
+      "_origin": "semantic",
       "community": 2,
       "community_name": "pick_and_place.py",
       "external": true,
@@ -804,6 +918,7 @@
     {
       "id": "trajectory_msgs_msg",
       "label": "trajectory_msgs_msg",
+      "_origin": "semantic",
       "community": 2,
       "community_name": "pick_and_place.py",
       "external": true,
@@ -815,6 +930,7 @@
     {
       "id": "visualization_msgs_msg",
       "label": "visualization_msgs_msg",
+      "_origin": "semantic",
       "community": 2,
       "community_name": "pick_and_place.py",
       "external": true,
@@ -826,6 +942,7 @@
     {
       "id": "launch",
       "label": "launch",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -837,6 +954,7 @@
     {
       "id": "launch_actions",
       "label": "launch_actions",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -848,6 +966,7 @@
     {
       "id": "launch_conditions",
       "label": "launch_conditions",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -859,6 +978,7 @@
     {
       "id": "launch_ros_actions",
       "label": "launch_ros_actions",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -870,6 +990,7 @@
     {
       "id": "launch_ros_parameter_descriptions",
       "label": "launch_ros_parameter_descriptions",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -881,6 +1002,7 @@
     {
       "id": "launch_ros_substitutions",
       "label": "launch_ros_substitutions",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -892,6 +1014,7 @@
     {
       "id": "launch_substitutions",
       "label": "launch_substitutions",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -903,6 +1026,7 @@
     {
       "id": "os",
       "label": "os",
+      "_origin": "semantic",
       "community": 3,
       "community_name": "view_robot.launch.py",
       "external": true,
@@ -912,8 +1036,45 @@
       "type": "external"
     },
     {
+      "id": "argparse",
+      "label": "argparse",
+      "_origin": "semantic",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "argparse",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "rclpy",
+      "label": "rclpy",
+      "_origin": "semantic",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "rclpy",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "rclpy_node",
+      "label": "rclpy_node",
+      "_origin": "semantic",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "rclpy_node",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ext_setup_bash",
       "label": "ext_setup_bash",
+      "_origin": "semantic",
       "community": 6,
       "community_name": "moveit_launch.sh",
       "external": true,
@@ -925,6 +1086,7 @@
     {
       "id": "install_setup",
       "label": "install_setup",
+      "_origin": "semantic",
       "community": 6,
       "community_name": "moveit_launch.sh",
       "external": true,
@@ -932,9 +1094,124 @@
       "norm_label": "install_setup",
       "source_file": "",
       "type": "external"
+    },
+    {
+      "id": "ament_index_python_packages",
+      "label": "ament_index_python_packages",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ament_index_python_packages",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "math",
+      "label": "math",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "math",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "sensor_msgs_msg",
+      "label": "sensor_msgs_msg",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "sensor_msgs_msg",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "serial",
+      "label": "serial",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "serial",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "yaml",
+      "label": "yaml",
+      "community": 4,
+      "community_name": "esp32_bridge.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "yaml",
+      "source_file": "",
+      "type": "external"
     }
   ],
   "links": [
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_init",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_init",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_init",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_connect_esp32",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_stream_to_esp32",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_rad_to_deg",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_stream_to_esp32",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_gripper_to_deg",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_main",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
     {
       "source": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_init",
       "target": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace_init",
@@ -1005,6 +1282,78 @@
       "context": "import",
       "source_file": "devotics_arm_description/launch/view_robot.launch.py",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "argparse",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "math",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "os",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "rclpy",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "serial",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "yaml",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -1272,6 +1621,42 @@
       "weight": 1.0
     },
     {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "rclpy_node",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "sensor_msgs_msg",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "ament_index_python_packages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
       "source": "devotics_arm_moveit_config_scripts_pick_and_place",
       "target": "rclpy_node",
       "relation": "imports_from",
@@ -1377,6 +1762,18 @@
       "context": "import",
       "source_file": "view_robot_launch.sh",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_joint_state_callback",
+      "target": "jointstate",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -1534,6 +1931,28 @@
       "weight": 1.0
     },
     {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_main",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
       "source": "devotics_arm_moveit_config_scripts_pick_and_place",
       "target": "devotics_arm_moveit_config_scripts_pick_and_place_main",
       "relation": "contains",
@@ -1578,14 +1997,91 @@
       "weight": 1.0
     },
     {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_py_node",
+      "relation": "inherits",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
       "source": "devotics_arm_moveit_config_scripts_pick_and_place_devoticsv1pickandplace",
-      "target": "node",
+      "target": "devotics_arm_moveit_config_scripts_pick_and_place_py_node",
       "relation": "inherits",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
       "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_stream_to_esp32",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_connect_esp32",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_joint_state_callback",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_rad_to_deg",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge_devoticsv1esp32bridge_gripper_to_deg",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -1641,6 +2137,17 @@
       "confidence_score": 1.0,
       "source_file": "devotics_arm_moveit_config/scripts/pick_and_place.py",
       "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "devotics_arm_moveit_config_scripts_esp32_bridge_rationale_2",
+      "target": "devotics_arm_moveit_config_scripts_esp32_bridge",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "devotics_arm_moveit_config/scripts/esp32_bridge.py",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -1865,5 +2372,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "29f9afbf76f06bc9b1b0c2f6b64a37bdf4e56d8e"
+  "built_at_commit": "3a871b7118a8bcf9923ca11178694ce22b81c96b"
 }

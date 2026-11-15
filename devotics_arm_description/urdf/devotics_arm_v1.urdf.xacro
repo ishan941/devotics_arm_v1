@@ -132,7 +132,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata2.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <visual>
@@ -140,7 +140,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata3.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <visual>
@@ -148,7 +148,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata4.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <visual>
@@ -156,7 +156,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata5.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <collision>
@@ -199,7 +199,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_Eje.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="light_gray" />
+      <material name="accent_green" />
     </visual>
 
     <collision>
@@ -232,7 +232,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Antebrazo.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="light_gray" />
+      <material name="accent_green" />
     </visual>
 
     <collision>
@@ -266,7 +266,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Brazo.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="light_gray" />
     </visual>
 
     <!-- 2. Servo Retainer Lock (Seguro_de_servomotor.stl) -->
@@ -364,7 +364,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_garra.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <!-- 3. Synchronizing Gears (Engranaje1.stl & Engranaje2.stl) -->
@@ -373,7 +373,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Engranaje1.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <visual>
@@ -381,7 +381,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Engranaje2.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <!-- 4. Parallel Linkage Bars (Barra1.stl & Barra2.stl) -->
@@ -390,7 +390,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Barra1.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <visual>
@@ -398,7 +398,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Barra2.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_green" />
+      <material name="devotics_orange" />
     </visual>
 
     <collision>

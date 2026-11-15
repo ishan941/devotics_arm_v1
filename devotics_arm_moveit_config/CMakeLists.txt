@@ -14,7 +14,9 @@ install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
 install(FILES .setup_assistant DESTINATION share/${PROJECT_NAME})
 
 install(
-  PROGRAMS scripts/pick_and_place.py
+  PROGRAMS
+    scripts/pick_and_place.py
+    scripts/esp32_bridge.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
