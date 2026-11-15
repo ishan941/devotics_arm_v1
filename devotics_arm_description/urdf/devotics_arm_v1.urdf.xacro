@@ -4,15 +4,65 @@
   <!-- 1. Include Shared Visual Materials -->
   <xacro:include filename="materials.xacro" />
 
-  <!-- 2. Kinematic Constants (Meters) — From Stage 1 Reverse Engineering -->
-  <xacro:property name="BASE_TO_J1_Z" value="0.012" />       <!-- 55.0 mm: Table to Yaw plane -->
-  <xacro:property name="BASE_TO_J1_Z" value="0.006" />       <!-- 6.0 mm: Ball bearing rolling plane -->
-  <xacro:property name="J1_TO_J2_Z" value="0.080" />         <!-- 80.0 mm: Turret rise to Shoulder -->
-  <xacro:property name="J2_TO_J3_LEN" value="0.185" />       <!-- 185.0 mm: Upper arm pivot-to-pivot -->
-  <xacro:property name="J3_TO_J4_LEN" value="0.138" />       <!-- 138.0 mm: Forearm pivot-to-pivot -->
-  <xacro:property name="J4_TO_J5_OFFSET" value="0.065" />    <!-- 65.0 mm: Pitch hinge to Roll axis -->
-  <xacro:property name="J5_TO_GRIPPER_BASE" value="0.010" /> <!-- 10.0 mm: Flange adapter thickness -->
-  <xacro:property name="GRIPPER_BASE_TO_TCP" value="0.080" /><!-- 80.0 mm: Flange to fingertip grasp center -->
+  <!-- ================================================================== -->
+  <!-- 2. Kinematic Constants (Meters) — Fabri Creator V1 Reverse-Eng     -->
+  <!-- ================================================================== -->
+  <!-- Global STL Assembly Reference Points (X_stl, Y_stl, Z_stl in mm):
+       J0 (Base bottom on table) : (  40.78,  35.86,  92.88 )
+       J1 (Base Yaw plane)       : (  40.78,  93.11,  92.88 )
+       J2 (Shoulder Pitch axis)  : (  27.04, 163.57,  92.88 )
+       J3 (Elbow Pitch axis)     : (  31.14, 283.48,  94.50 )
+       J4 (Wrist Pitch axis)     : ( -55.83, 303.15, 105.35 )
+       J5 (Wrist Roll / Gripper) : (-105.80, 308.87,  97.37 )
+       Gripper Detached Sub-Assy : ( -61.09, 192.29,  21.83 )             -->
+
+  <!-- Visual Mesh Origin Offsets: xyz = (-X_stl, +Z_stl, -Y_stl) in meters -->
+  <xacro:property name="STL_BASE_OFFSET_X" value="-0.04078" />
+  <xacro:property name="STL_BASE_OFFSET_Y" value="0.09288" />
+  <xacro:property name="STL_BASE_OFFSET_Z" value="-0.03586" />
+
+  <!-- J0 -> J1 (Base Yaw) -->
+  <xacro:property name="BASE_TO_J1_Z" value="0.05725" />
+  <xacro:property name="STL_J1_OFFSET_Z" value="-0.09311" />
+
+  <!-- J1 -> J2 (Shoulder Pitch: Eje_Central -> Antebrazo) -->
+  <xacro:property name="J1_TO_J2_X" value="-0.01374" />
+  <xacro:property name="J1_TO_J2_Z" value="0.07046" />
+  <xacro:property name="STL_J2_OFFSET_X" value="-0.02704" />
+  <xacro:property name="STL_J2_OFFSET_Y" value="0.09288" />
+  <xacro:property name="STL_J2_OFFSET_Z" value="-0.16357" />
+
+  <!-- J2 -> J3 (Elbow Pitch: Antebrazo -> Brazo, 120.0 mm link) -->
+  <xacro:property name="J2_TO_J3_X" value="0.00410" />
+  <xacro:property name="J2_TO_J3_Y" value="-0.00162" />
+  <xacro:property name="J2_TO_J3_Z" value="0.11991" />
+  <xacro:property name="STL_J3_OFFSET_X" value="-0.03114" />
+  <xacro:property name="STL_J3_OFFSET_Y" value="0.09450" />
+  <xacro:property name="STL_J3_OFFSET_Z" value="-0.28348" />
+
+  <!-- J3 -> J4 (Wrist Pitch: Brazo -> Muneca, 89.2 mm link) -->
+  <xacro:property name="J3_TO_J4_X" value="-0.08697" />
+  <xacro:property name="J3_TO_J4_Y" value="-0.01085" />
+  <xacro:property name="J3_TO_J4_Z" value="0.01967" />
+  <xacro:property name="STL_J4_OFFSET_X" value="0.05583" />
+  <xacro:property name="STL_J4_OFFSET_Y" value="0.10535" />
+  <xacro:property name="STL_J4_OFFSET_Z" value="-0.30315" />
+
+  <!-- J4 -> J5 (Wrist Roll: Muneca -> Base_de_la_garra, 50.9 mm offset) -->
+  <xacro:property name="J4_TO_J5_X" value="-0.04997" />
+  <xacro:property name="J4_TO_J5_Y" value="0.00798" />
+  <xacro:property name="J4_TO_J5_Z" value="0.00572" />
+  <xacro:property name="STL_J5_OFFSET_X" value="0.10580" />
+  <xacro:property name="STL_J5_OFFSET_Y" value="0.09737" />
+  <xacro:property name="STL_J5_OFFSET_Z" value="-0.30887" />
+
+  <!-- Detached Gripper Subassembly Offset (Base_de_la_garra, Engranaje1/2, Barra1/2, Pinza1/2) -->
+  <xacro:property name="STL_GARRA_OFFSET_X" value="0.06109" />
+  <xacro:property name="STL_GARRA_OFFSET_Y" value="0.02183" />
+  <xacro:property name="STL_GARRA_OFFSET_Z" value="-0.19229" />
+
+  <!-- Fingertip Grasp Center (TCP) relative to J5 along -X -->
+  <xacro:property name="J5_TO_TCP_X" value="-0.10500" />
 
   <!-- ========================================== -->
   <!-- 3. Inertia Helper Macros                   -->
@@ -35,7 +85,6 @@
     </inertial>
   </xacro:macro>
 
-
   <!-- ========================================== -->
   <!-- World Link & Base Attachment               -->
   <!-- ========================================== -->
@@ -47,52 +96,80 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-    <!-- ========================================== -->
-  <!-- Base Link (Stationary Baseplate Assembly)  -->
+  <!-- ========================================== -->
+  <!-- Base Link (Stationary Base + Cover + Legs) -->
   <!-- ========================================== -->
   <link name="base_link">
-    <!-- 1. Table Mount Baseplate (Base_02.stl) -->
+    <!-- 1. Main Stationary Base Cylinder (Base.stl) -->
     <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Base_02.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="dark_gray" />
+      <material name="light_gray" />
     </visual>
 
-    <!-- 2. Thrust Ball Bearing Cage (Jaula_bolas.stl) seated in the raceway -->
+    <!-- 2. Bottom Base Cover Plate (Tapa_Base.stl) -->
     <visual>
-      <origin xyz="0 0 0.003" rpy="1.5708 0 0" />
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Jaula_bolas.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_Base.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="metallic_silver" />
+      <material name="accent_blue" />
     </visual>
 
-    <!-- 3. Central Servo Horn Retainer Plate (Base_04.stl) in the center hole -->
+    <!-- 3. Radial Stabilizer Legs (Pata1.stl .. Pata5.stl, including Pata3.stl) -->
     <visual>
-      <origin xyz="0 0 0.002" rpy="1.5708 0 0" />
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Base_04.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pata1.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="devotics_orange" />
+      <material name="accent_blue" />
+    </visual>
+
+    <visual>
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pata2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <visual>
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pata3.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <visual>
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pata4.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <visual>
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_BASE_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pata5.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
     </visual>
 
     <collision>
-      <origin xyz="0 0 0.006" rpy="0 0 0" />
+      <origin xyz="0 0 ${BASE_TO_J1_Z / 2.0}" rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.075" length="0.012" />
+        <cylinder radius="0.049" length="${BASE_TO_J1_Z}" />
       </geometry>
     </collision>
-    <xacro:cylinder_inertia m="0.25" r="0.075" h="0.012" />
+    <xacro:cylinder_inertia m="0.30" r="0.049" h="${BASE_TO_J1_Z}" />
   </link>
 
-
-
-
-
   <!-- ========================================== -->
-  <!-- Joint 1: Base Yaw (MG996R)                 -->
+  <!-- Joint 1: Base Yaw (Revolute around Z)      -->
   <!-- ========================================== -->
   <joint name="joint_1" type="revolute">
     <parent link="base_link" />
@@ -102,289 +179,291 @@
     <limit lower="-2.61799" upper="2.61799" effort="2.5" velocity="3.14" />
     <dynamics damping="0.1" friction="0.1" />
   </joint>
-    <!-- ========================================== -->
-  <!-- Base Rotation Link (Drum + 2 Side Towers)  -->
+
+  <!-- ========================================== -->
+  <!-- Base Rotation Link (Eje Central + Tapa Eje)-->
   <!-- ========================================== -->
   <link name="base_rotation_link">
-    <!-- Visual 1: Main Rotating Housing Drum (Base_01.stl) -->
+    <!-- 1. Rotating Shoulder Turret (Eje_Central.stl) -->
     <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_J1_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Base_01.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Eje_Central.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="dark_gray" />
+      <material name="accent_blue" />
     </visual>
-    <!-- Visual 2: Left Tower seated on the Left Shelf -->
+
+    <!-- 2. Shoulder Turret Side Cover (Tapa_Eje.stl) -->
     <visual>
-      <origin xyz="0 0.0325 0.035" rpy="1.5708 0 -1.5708" />
+      <origin xyz="${STL_BASE_OFFSET_X} ${STL_BASE_OFFSET_Y} ${STL_J1_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Base_03.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_Eje.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="devotics_orange" />
+      <material name="light_gray" />
     </visual>
-    <!-- Visual 3: Right Tower seated on the Right Shelf -->
-    <visual>
-      <origin xyz="0 -0.0325 0.035" rpy="1.5708 0 1.5708" />
-      <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Base_03.stl" scale="0.001 0.001 0.001" />
-      </geometry>
-      <material name="devotics_orange" />
-    </visual>
+
     <collision>
-      <origin xyz="0 0 0.040" rpy="0 0 0" />
+      <origin xyz="0 0 0.04739" rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.060" length="0.080" />
+        <cylinder radius="0.049" length="0.09478" />
       </geometry>
     </collision>
-    <xacro:cylinder_inertia m="0.45" r="0.060" h="0.080" />
+    <xacro:cylinder_inertia m="0.25" r="0.049" h="0.09478" />
   </link>
 
-
-
-
-
-
-
-
-
-  
-    <!-- ========================================== -->
-  <!-- Joint 2: Shoulder Pitch (MG996R + Springs) -->
+  <!-- ========================================== -->
+  <!-- Joint 2: Shoulder Pitch (Revolute around Y)-->
   <!-- ========================================== -->
   <joint name="joint_2" type="revolute">
     <parent link="base_rotation_link" />
     <child link="upper_arm_link" />
-    <origin xyz="0 0 ${J1_TO_J2_Z}" rpy="0 0 0" />
+    <origin xyz="${J1_TO_J2_X} 0 ${J1_TO_J2_Z}" rpy="0 0 0" />
     <axis xyz="0 1 0" />
     <limit lower="-1.5708" upper="1.5708" effort="3.0" velocity="3.14" />
     <dynamics damping="0.15" friction="0.1" />
   </joint>
 
   <!-- ========================================== -->
-  <!-- Upper Arm Link (185 mm Pivot-to-Pivot)     -->
+  <!-- Upper Arm Link (Antebrazo.stl)             -->
   <!-- ========================================== -->
   <link name="upper_arm_link">
     <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
+      <origin xyz="${STL_J2_OFFSET_X} ${STL_J2_OFFSET_Y} ${STL_J2_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <mesh filename="package://devotics_arm_description/meshes/visual/Brazo_01.stl" scale="0.001 0.001 0.001" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Antebrazo.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="light_gray" />
     </visual>
+
     <collision>
-      <origin xyz="0 0 ${J2_TO_J3_LEN / 2.0}" rpy="0 0 0" />
+      <origin xyz="0 0.012 ${J2_TO_J3_Z / 2.0}" rpy="0 0 0" />
       <geometry>
-        <box size="0.050 0.060 ${J2_TO_J3_LEN + 0.050}" />
+        <box size="0.042 0.028 ${J2_TO_J3_Z + 0.042}" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.25" x="0.050" y="0.060" z="${J2_TO_J3_LEN + 0.050}" />
+    <xacro:box_inertia m="0.20" x="0.042" y="0.028" z="${J2_TO_J3_Z + 0.042}" />
   </link>
 
-
-    <!-- ========================================== -->
-  <!-- Joint 3: Elbow Pitch (MG996R)              -->
+  <!-- ========================================== -->
+  <!-- Joint 3: Elbow Pitch (Antebrazo -> Brazo)  -->
   <!-- ========================================== -->
   <joint name="joint_3" type="revolute">
     <parent link="upper_arm_link" />
     <child link="forearm_link" />
-    <origin xyz="0 0 ${J2_TO_J3_LEN}" rpy="0 0 0" />
+    <origin xyz="${J2_TO_J3_X} ${J2_TO_J3_Y} ${J2_TO_J3_Z}" rpy="0 0 0" />
     <axis xyz="0 1 0" />
     <limit lower="-2.0944" upper="2.0944" effort="2.5" velocity="3.14" />
     <dynamics damping="0.1" friction="0.1" />
   </joint>
 
   <!-- ========================================== -->
-  <!-- Forearm Link (138 mm Pivot-to-Pivot)       -->
+  <!-- Forearm Link (Brazo.stl + Seguro)          -->
   <!-- ========================================== -->
   <link name="forearm_link">
-    <!-- Elbow hinge boss -->
+    <!-- 1. Main Forearm Link (Brazo.stl) -->
     <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <origin xyz="${STL_J3_OFFSET_X} ${STL_J3_OFFSET_Y} ${STL_J3_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <cylinder radius="0.022" length="0.045" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Brazo.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="metallic_silver" />
+      <material name="accent_blue" />
     </visual>
-    <!-- Main forearm body (138mm span) -->
+
+    <!-- 2. Servo Retainer Lock (Seguro_de_servomotor.stl) -->
     <visual>
-      <origin xyz="0 0 ${J3_TO_J4_LEN / 2.0}" rpy="0 0 0" />
+      <origin xyz="${STL_J3_OFFSET_X} ${STL_J3_OFFSET_Y} ${STL_J3_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <box size="0.030 0.045 ${J3_TO_J4_LEN}" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Seguro_de_servomotor.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="dark_gray" />
+      <material name="light_gray" />
     </visual>
-    <!-- Wrist hinge boss -->
-    <visual>
-      <origin xyz="0 0 ${J3_TO_J4_LEN}" rpy="1.5708 0 0" />
-      <geometry>
-        <cylinder radius="0.020" length="0.045" />
-      </geometry>
-      <material name="metallic_silver" />
-    </visual>
+
     <collision>
-      <origin xyz="0 0 ${J3_TO_J4_LEN / 2.0}" rpy="0 0 0" />
+      <origin xyz="${J3_TO_J4_X / 2.0} ${J3_TO_J4_Y} ${J3_TO_J4_Z / 2.0}" rpy="0 0 0" />
       <geometry>
-        <box size="0.045 0.055 ${J3_TO_J4_LEN + 0.040}" />
+        <box size="0.100 0.038 0.045" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.20" x="0.045" y="0.055" z="${J3_TO_J4_LEN + 0.040}" />
+    <xacro:box_inertia m="0.18" x="0.100" y="0.038" z="0.045" />
   </link>
 
-  
   <!-- ========================================== -->
-  <!-- Joint 4: Wrist Pitch (MG996R)              -->
+  <!-- Joint 4: Wrist Pitch (Brazo -> Muneca)     -->
   <!-- ========================================== -->
   <joint name="joint_4" type="revolute">
     <parent link="forearm_link" />
     <child link="wrist_pitch_link" />
-    <origin xyz="0 0 ${J3_TO_J4_LEN}" rpy="0 0 0" />
+    <origin xyz="${J3_TO_J4_X} ${J3_TO_J4_Y} ${J3_TO_J4_Z}" rpy="0 0 0" />
     <axis xyz="0 1 0" />
     <limit lower="-1.5708" upper="1.5708" effort="2.0" velocity="3.14" />
     <dynamics damping="0.08" friction="0.08" />
   </joint>
 
   <!-- ========================================== -->
-  <!-- Wrist Pitch Link (65 mm offset to roll)    -->
+  <!-- Wrist Pitch Link (Muneca.stl)              -->
   <!-- ========================================== -->
   <link name="wrist_pitch_link">
-    <!-- Pitch hinge boss -->
     <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <origin xyz="${STL_J4_OFFSET_X} ${STL_J4_OFFSET_Y} ${STL_J4_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <cylinder radius="0.018" length="0.040" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Muneca.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="devotics_orange" />
+      <material name="light_gray" />
     </visual>
-    <!-- Housing body projecting forward along X -->
-    <visual>
-      <origin xyz="${J4_TO_J5_OFFSET / 2.0} 0 0" rpy="0 0 0" />
-      <geometry>
-        <box size="${J4_TO_J5_OFFSET} 0.042 0.045" />
-      </geometry>
-      <material name="devotics_orange" />
-    </visual>
+
     <collision>
-      <origin xyz="${J4_TO_J5_OFFSET / 2.0} 0 0" rpy="0 0 0" />
+      <origin xyz="${J4_TO_J5_X / 2.0} 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="${J4_TO_J5_OFFSET} 0.045 0.045" />
+        <box size="0.055 0.038 0.044" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.12" x="${J4_TO_J5_OFFSET}" y="0.045" z="0.045" />
+    <xacro:box_inertia m="0.10" x="0.055" y="0.038" z="0.044" />
   </link>
 
   <!-- ========================================== -->
-  <!-- Joint 5: Wrist Roll (MG996R)               -->
+  <!-- Joint 5: Wrist Roll (Muneca -> Garra)      -->
   <!-- ========================================== -->
   <joint name="joint_5" type="revolute">
     <parent link="wrist_pitch_link" />
     <child link="wrist_roll_link" />
-    <origin xyz="${J4_TO_J5_OFFSET} 0 0" rpy="0 0 0" />
+    <origin xyz="${J4_TO_J5_X} ${J4_TO_J5_Y} ${J4_TO_J5_Z}" rpy="0 0 0" />
     <axis xyz="1 0 0" />
     <limit lower="-3.14159" upper="3.14159" effort="1.5" velocity="3.14" />
     <dynamics damping="0.05" friction="0.05" />
   </joint>
 
-  <!-- ========================================== -->
-  <!-- Wrist Roll Link (Flange)                   -->
-  <!-- ========================================== -->
   <link name="wrist_roll_link">
-    <visual>
-      <origin xyz="${J5_TO_GRIPPER_BASE / 2.0} 0 0" rpy="0 1.5708 0" />
-      <geometry>
-        <cylinder radius="0.018" length="${J5_TO_GRIPPER_BASE}" />
-      </geometry>
-      <material name="metallic_silver" />
-    </visual>
-    <collision>
-      <origin xyz="${J5_TO_GRIPPER_BASE / 2.0} 0 0" rpy="0 1.5708 0" />
-      <geometry>
-        <cylinder radius="0.020" length="${J5_TO_GRIPPER_BASE}" />
-      </geometry>
-    </collision>
-    <xacro:cylinder_inertia m="0.04" r="0.020" h="${J5_TO_GRIPPER_BASE}" />
+    <xacro:cylinder_inertia m="0.02" r="0.015" h="0.010" />
   </link>
 
-    <!-- ========================================== -->
+  <!-- ========================================== -->
   <!-- Fixed Flange Joint to Gripper Base         -->
   <!-- ========================================== -->
   <joint name="joint_gripper_base" type="fixed">
     <parent link="wrist_roll_link" />
     <child link="gripper_base_link" />
-    <origin xyz="${J5_TO_GRIPPER_BASE} 0 0" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
   <!-- ========================================== -->
-  <!-- Gripper Base Body (MG90S housing)          -->
+  <!-- Gripper Base Link (Base de la garra + Assm)-->
   <!-- ========================================== -->
   <link name="gripper_base_link">
+    <!-- 1. Gripper Chassis (Base_de_la_garra.stl) -->
     <visual>
-      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <box size="0.040 0.045 0.035" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Base_de_la_garra.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="dark_gray" />
+      <material name="accent_blue" />
     </visual>
-    <collision>
-      <origin xyz="0.020 0 0" rpy="0 0 0" />
+
+    <!-- 2. Gripper Top Cover Plate (Tapa_garra.stl) -->
+    <visual>
+      <origin xyz="${STL_J5_OFFSET_X} ${STL_J5_OFFSET_Y} ${STL_J5_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <box size="0.040 0.045 0.035" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_garra.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <!-- 3. Synchronizing Gears (Engranaje1.stl & Engranaje2.stl) -->
+    <visual>
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Engranaje1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <visual>
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Engranaje2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <!-- 4. Parallel Linkage Bars (Barra1.stl & Barra2.stl) -->
+    <visual>
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Barra1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <visual>
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="package://devotics_arm_description/meshes/visual/Barra2.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="accent_blue" />
+    </visual>
+
+    <collision>
+      <origin xyz="-0.025 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.055 0.042 0.038" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.06" x="0.040" y="0.045" z="0.035" />
+    <xacro:box_inertia m="0.08" x="0.055" y="0.042" z="0.038" />
   </link>
 
   <!-- ========================================== -->
-  <!-- Actuated Gripper Jaws (Left + Right Mimic) -->
+  <!-- Actuated Gripper Jaws (Pinza1 & Pinza2)    -->
   <!-- ========================================== -->
   <joint name="gripper_left_finger_joint" type="prismatic">
     <parent link="gripper_base_link" />
     <child link="gripper_left_finger_link" />
-    <origin xyz="0.040 0.015 0" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit lower="0.0" upper="0.025" effort="1.0" velocity="0.1" />
+    <limit lower="-0.015" upper="0.015" effort="1.0" velocity="0.1" />
   </joint>
 
   <link name="gripper_left_finger_link">
     <visual>
-      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <box size="0.040 0.006 0.015" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pinza1.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="light_gray" />
     </visual>
+
     <collision>
-      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <origin xyz="-0.080 0.018 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.040 0.006 0.015" />
+        <box size="0.065 0.012 0.017" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.01" x="0.040" y="0.006" z="0.015" />
+    <xacro:box_inertia m="0.015" x="0.065" y="0.012" z="0.017" />
   </link>
 
   <joint name="gripper_right_finger_joint" type="prismatic">
     <parent link="gripper_base_link" />
     <child link="gripper_right_finger_link" />
-    <origin xyz="0.040 -0.015 0" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 -1 0" />
-    <limit lower="0.0" upper="0.025" effort="1.0" velocity="0.1" />
+    <limit lower="-0.015" upper="0.015" effort="1.0" velocity="0.1" />
     <mimic joint="gripper_left_finger_joint" multiplier="1.0" offset="0.0" />
   </joint>
 
   <link name="gripper_right_finger_link">
     <visual>
-      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <origin xyz="${STL_GARRA_OFFSET_X} ${STL_GARRA_OFFSET_Y} ${STL_GARRA_OFFSET_Z}" rpy="1.5707963 0 0" />
       <geometry>
-        <box size="0.040 0.006 0.015" />
+        <mesh filename="package://devotics_arm_description/meshes/visual/Pinza2.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="light_gray" />
     </visual>
+
     <collision>
-      <origin xyz="0.020 0 0" rpy="0 0 0" />
+      <origin xyz="-0.080 -0.010 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.040 0.006 0.015" />
+        <box size="0.065 0.012 0.017" />
       </geometry>
     </collision>
-    <xacro:box_inertia m="0.01" x="0.040" y="0.006" z="0.015" />
+    <xacro:box_inertia m="0.015" x="0.065" y="0.012" z="0.017" />
   </link>
 
   <!-- ========================================== -->
@@ -392,13 +471,10 @@
   <!-- ========================================== -->
   <joint name="tcp_joint" type="fixed">
     <parent link="gripper_base_link" />
-    <child tool="tool" link="tool0" />
-    <origin xyz="${GRIPPER_BASE_TO_TCP} 0 0" rpy="0 0 0" />
+    <child link="tool0" />
+    <origin xyz="${J5_TO_TCP_X} 0 0" rpy="0 0 0" />
   </joint>
 
   <link name="tool0" />
-
-
-
 
 </robot>
