@@ -3,7 +3,7 @@
 <package format="3">
   <name>devotics_arm_description</name>
   <version>0.1.0</version>
-  <description>Devotics Arm V1 description package (Xacro URDF, RViz2 visualization, meshes)</description>
+  <description>Devotics Arm V1 Robot Description (URDF/Xacro and RViz)</description>
   <maintainer email="ishan@devotics.org">Ishan</maintainer>
   <license>Apache-2.0</license>
 

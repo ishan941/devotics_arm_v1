@@ -1,0 +1,70 @@
+# =============================================================================
+# Devotics Arm V1 — ESP32 + PCA9685 Servo Calibration Configuration
+# =============================================================================
+# Formula used by esp32_bridge.py:
+#   servo_deg = servo_home + direction * (ros_rad * 180.0 / pi) + offset_deg
+#   servo_deg = clamp(servo_deg, servo_min, servo_max)
+#
+# Quick Tuning Guide:
+#   - If a physical joint moves the OPPOSITE direction of RViz: flip `direction` (1 <-> -1)
+#   - If a joint is slightly off at 0 rad (HOME): adjust `offset_deg` (e.g. +5.0 or -3.0)
+#   - `serial_port` can be USB ("/dev/ttyUSB0", "/dev/ttyACM0") or Wi-Fi ("socket://192.168.1.50:8888")
+# =============================================================================
+
+devotics_v1_esp32_bridge:
+  ros__parameters:
+    serial_port: "/dev/ttyUSB0"
+    baud_rate: 115200
+    update_rate_hz: 25.0
+
+    # Joint 1: Base Yaw (PCA9685 CH0)
+    joint_1:
+      servo_id: "J1"
+      servo_min: 15
+      servo_home: 90
+      servo_max: 165
+      direction: 1
+      offset_deg: 0.0
+
+    # Joint 2: Shoulder Pitch (PCA9685 CH1)
+    joint_2:
+      servo_id: "J2"
+      servo_min: 20
+      servo_home: 90
+      servo_max: 160
+      direction: -1
+      offset_deg: 0.0
+
+    # Joint 3: Elbow Pitch (PCA9685 CH2)
+    joint_3:
+      servo_id: "J3"
+      servo_min: 20
+      servo_home: 90
+      servo_max: 160
+      direction: -1
+      offset_deg: 0.0
+
+    # Joint 4: Wrist Pitch (PCA9685 CH3)
+    joint_4:
+      servo_id: "J4"
+      servo_min: 20
+      servo_home: 90
+      servo_max: 160
+      direction: 1
+      offset_deg: 0.0
+
+    # Joint 5: Wrist Roll (PCA9685 CH4)
+    joint_5:
+      servo_id: "J5"
+      servo_min: 10
+      servo_home: 90
+      servo_max: 170
+      direction: 1
+      offset_deg: 0.0
+
+    # Joint 6: Gripper MG90S (PCA9685 CH5)
+    # Maps gripper_left_finger_joint in meters [-0.005 .. +0.012] to servo degrees
+    gripper:
+      open_deg: 115
+      neutral_deg: 90
+      closed_deg: 65

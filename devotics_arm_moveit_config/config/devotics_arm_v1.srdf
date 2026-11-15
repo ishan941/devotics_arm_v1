@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="devotics_arm_v1">
+    <!-- PLANNING GROUPS -->
+    <group name="devotics_arm">
+        <chain base_link="base_link" tip_link="tool0"/>
+    </group>
+    <group name="gripper">
+        <joint name="gripper_left_finger_joint"/>
+        <joint name="gripper_right_finger_joint"/>
+    </group>
+
+    <!-- NAMED GROUP STATES (ARM) -->
+    <group_state name="home" group="devotics_arm">
+        <joint name="joint_1" value="0.0"/>
+        <joint name="joint_2" value="0.0"/>
+        <joint name="joint_3" value="0.0"/>
+        <joint name="joint_4" value="0.0"/>
+        <joint name="joint_5" value="0.0"/>
+    </group_state>
+
+    <group_state name="ready" group="devotics_arm">
+        <joint name="joint_1" value="0.0"/>
+        <joint name="joint_2" value="-0.20"/>
+        <joint name="joint_3" value="-0.15"/>
+        <joint name="joint_4" value="0.20"/>
+        <joint name="joint_5" value="0.0"/>
+    </group_state>
+
+    <group_state name="pick_approach" group="devotics_arm">
+        <joint name="joint_1" value="-0.55"/>
+        <joint name="joint_2" value="-0.25"/>
+        <joint name="joint_3" value="-0.25"/>
+        <joint name="joint_4" value="0.15"/>
+        <joint name="joint_5" value="0.0"/>
+    </group_state>
+
+    <group_state name="pick" group="devotics_arm">
+        <joint name="joint_1" value="-0.55"/>
+        <joint name="joint_2" value="-0.55"/>
+        <joint name="joint_3" value="-0.50"/>
+        <joint name="joint_4" value="0.35"/>
+        <joint name="joint_5" value="0.0"/>
+    </group_state>
+
+    <group_state name="place_approach" group="devotics_arm">
+        <joint name="joint_1" value="0.55"/>
+        <joint name="joint_2" value="-0.25"/>
+        <joint name="joint_3" value="-0.25"/>
+        <joint name="joint_4" value="0.15"/>
+        <joint name="joint_5" value="0.0"/>
+    </group_state>
+
+    <group_state name="place" group="devotics_arm">
+        <joint name="joint_1" value="0.55"/>
+        <joint name="joint_2" value="-0.55"/>
+        <joint name="joint_3" value="-0.50"/>
+        <joint name="joint_4" value="0.35"/>
+        <joint name="joint_5" value="0.0"/>
+    </group_state>
+
+    <!-- NAMED GROUP STATES (GRIPPER) -->
+    <group_state name="open" group="gripper">
+        <joint name="gripper_left_finger_joint" value="0.012"/>
+        <joint name="gripper_right_finger_joint" value="0.012"/>
+    </group_state>
+
+    <group_state name="close" group="gripper">
+        <joint name="gripper_left_finger_joint" value="-0.005"/>
+        <joint name="gripper_right_finger_joint" value="-0.005"/>
+    </group_state>
+
+    <!-- END EFFECTOR -->
+    <end_effector name="hand" parent_link="tool0" group="gripper" parent_group="devotics_arm"/>
+
+    <!-- VIRTUAL JOINT -->
+    <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+
+    <!-- SELF-COLLISION DISABLE MATRIX -->
+    <disable_collisions link1="base_link" link2="base_rotation_link" reason="Adjacent"/>
+    <disable_collisions link1="base_rotation_link" link2="upper_arm_link" reason="Adjacent"/>
+    <disable_collisions link1="upper_arm_link" link2="forearm_link" reason="Adjacent"/>
+    <disable_collisions link1="forearm_link" link2="wrist_pitch_link" reason="Adjacent"/>
+    <disable_collisions link1="wrist_pitch_link" link2="wrist_roll_link" reason="Adjacent"/>
+    <disable_collisions link1="wrist_roll_link" link2="gripper_base_link" reason="Adjacent"/>
+    <disable_collisions link1="wrist_pitch_link" link2="gripper_base_link" reason="Never"/>
+    <disable_collisions link1="gripper_base_link" link2="gripper_left_finger_link" reason="Adjacent"/>
+    <disable_collisions link1="gripper_base_link" link2="gripper_right_finger_link" reason="Adjacent"/>
+    <disable_collisions link1="gripper_left_finger_link" link2="gripper_right_finger_link" reason="Never"/>
+    <disable_collisions link1="base_link" link2="upper_arm_link" reason="Never"/>
+    <disable_collisions link1="base_rotation_link" link2="forearm_link" reason="Never"/>
+    <disable_collisions link1="upper_arm_link" link2="wrist_pitch_link" reason="Never"/>
+    <disable_collisions link1="forearm_link" link2="wrist_roll_link" reason="Never"/>
+    <disable_collisions link1="forearm_link" link2="gripper_base_link" reason="Never"/>
+    <disable_collisions link1="wrist_pitch_link" link2="gripper_left_finger_link" reason="Never"/>
+    <disable_collisions link1="wrist_pitch_link" link2="gripper_right_finger_link" reason="Never"/>
+</robot>
