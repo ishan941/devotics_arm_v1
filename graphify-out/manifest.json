@@ -1,0 +1,152 @@
+{
+  "devotics_arm_description/launch/view_robot.launch.py": {
+    "mtime": 1790932190.99187,
+    "seen": 1794752349.8776367,
+    "ast_hash": "1236382fa05997d302fc55f9bf099e41",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/launch/demo.launch.py": {
+    "mtime": 1794752199.4647784,
+    "seen": 1794752349.8776402,
+    "ast_hash": "1ab2bd32dc17dacd0d037a28df63a7f5",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/launch/move_group.launch.py": {
+    "mtime": 1794752201.643805,
+    "seen": 1794752349.8776417,
+    "ast_hash": "b5d828fff25505a5a28c01338c61637c",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/launch/moveit_rviz.launch.py": {
+    "mtime": 1794752203.2068243,
+    "seen": 1794752349.8776424,
+    "ast_hash": "616e72b173a88e35b937636210ca4feb",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/launch/rsp.launch.py": {
+    "mtime": 1794752204.5718412,
+    "seen": 1794752349.8776433,
+    "ast_hash": "0443e00b108fbe98efb478566addd82a",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/launch/spawn_controllers.launch.py": {
+    "mtime": 1794752206.2278616,
+    "seen": 1794752349.8776438,
+    "ast_hash": "c32b580b1dd2618dd067a0818b3ed055",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/launch/static_virtual_joint_tfs.launch.py": {
+    "mtime": 1794752208.427889,
+    "seen": 1794752349.8776448,
+    "ast_hash": "f775d10aa9f076185cabb48a150c9ce5",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/scripts/pick_and_place.py": {
+    "mtime": 1794752317.997416,
+    "seen": 1794752349.8776453,
+    "ast_hash": "e337c22cf27e8a928c2fd254ad0cff45",
+    "semantic_hash": ""
+  },
+  "moveit_launch.sh": {
+    "mtime": 1794752320.5254548,
+    "seen": 1794752349.877646,
+    "ast_hash": "4c7d818ef4e69dcb9c7d6e98348c2af0",
+    "semantic_hash": ""
+  },
+  "view_robot_launch.sh": {
+    "mtime": 1794559071.4934227,
+    "seen": 1794752349.8776467,
+    "ast_hash": "36ca908a7d9fd02c886940af5e751928",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1790926350.8583953,
+    "seen": 1794752349.8776472,
+    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1790926350.8585138,
+    "seen": 1794752349.8776479,
+    "ast_hash": "6d73634a678cf1e1c71930adf80bd1f0",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1790926341.57257,
+    "seen": 1794752349.8776484,
+    "ast_hash": "dfa1bbdfc91a5d42175e9ce65a0adf6b",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1790925741.9601243,
+    "seen": 1794752349.8776488,
+    "ast_hash": "bde5b17dc5956e41bd0d23cae8d8ae30",
+    "semantic_hash": ""
+  },
+  "devotics_arm_description/CMakeLists.txt": {
+    "mtime": 1790932803.1647122,
+    "seen": 1794752349.8776495,
+    "ast_hash": "7b328194827f47929960bad18e7c573d",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/CMakeLists.txt": {
+    "mtime": 1794752101.8037329,
+    "seen": 1794752349.8776503,
+    "ast_hash": "63aa6eb6022e41b847567c318ecae9e6",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/config/joint_limits.yaml": {
+    "mtime": 1794752131.8370216,
+    "seen": 1794752349.8776507,
+    "ast_hash": "930a9b4a82a2b2a3bef93617ea87eff0",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/config/kinematics.yaml": {
+    "mtime": 1794752129.7950008,
+    "seen": 1794752349.8776512,
+    "ast_hash": "7f7d82790bbe046139157a79f2395df9",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/config/moveit_controllers.yaml": {
+    "mtime": 1794752133.6070395,
+    "seen": 1794752349.877652,
+    "ast_hash": "564bc8ceab0be07b86a8faea29dce542",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/config/ompl_planning.yaml": {
+    "mtime": 1794752137.465079,
+    "seen": 1794752349.8776524,
+    "ast_hash": "1f74d2f871b728dab6df87b81404502d",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/config/pilz_cartesian_limits.yaml": {
+    "mtime": 1794752139.2780976,
+    "seen": 1794752349.877653,
+    "ast_hash": "d9fc6eb771d381990f0e3063bb4196f7",
+    "semantic_hash": ""
+  },
+  "devotics_arm_moveit_config/config/ros2_controllers.yaml": {
+    "mtime": 1794752135.2690563,
+    "seen": 1794752349.8776536,
+    "ast_hash": "8d337d2dffa596c7cd451c4260e53ff8",
+    "semantic_hash": ""
+  },
+  "docs/architecture.md": {
+    "mtime": 1790925741.960325,
+    "seen": 1794752349.8776546,
+    "ast_hash": "bebcb26828cd4aeca95cd8c8ccacf6d8",
+    "semantic_hash": ""
+  },
+  "docs/engineering_roadmap.md": {
+    "mtime": 1790926341.5733104,
+    "seen": 1794752349.877655,
+    "ast_hash": "b0dacabaef88891f3ba6d3020e32b0c0",
+    "semantic_hash": ""
+  },
+  "docs/mechanical_dimensions.md": {
+    "mtime": 1790926579.3962946,
+    "seen": 1794752349.8776555,
+    "ast_hash": "7f9a6b7fde0fc0dfbb7d421224184ce4",
+    "semantic_hash": ""
+  }
+}

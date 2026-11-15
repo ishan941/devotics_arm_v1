@@ -115,7 +115,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_Base.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <!-- 3. Radial Stabilizer Legs (Pata1.stl .. Pata5.stl, including Pata3.stl) -->
@@ -124,7 +124,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata1.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <visual>
@@ -132,7 +132,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata2.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <visual>
@@ -140,7 +140,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata3.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <visual>
@@ -148,7 +148,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata4.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <visual>
@@ -156,7 +156,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Pata5.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <collision>
@@ -190,7 +190,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Eje_Central.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <!-- 2. Shoulder Turret Side Cover (Tapa_Eje.stl) -->
@@ -266,7 +266,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Brazo.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <!-- 2. Servo Retainer Lock (Seguro_de_servomotor.stl) -->
@@ -355,7 +355,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Base_de_la_garra.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <!-- 2. Gripper Top Cover Plate (Tapa_garra.stl) -->
@@ -364,7 +364,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Tapa_garra.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <!-- 3. Synchronizing Gears (Engranaje1.stl & Engranaje2.stl) -->
@@ -373,7 +373,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Engranaje1.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <visual>
@@ -381,7 +381,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Engranaje2.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <!-- 4. Parallel Linkage Bars (Barra1.stl & Barra2.stl) -->
@@ -390,7 +390,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Barra1.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <visual>
@@ -398,7 +398,7 @@
       <geometry>
         <mesh filename="package://devotics_arm_description/meshes/visual/Barra2.stl" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="accent_blue" />
+      <material name="accent_green" />
     </visual>
 
     <collision>
@@ -445,7 +445,6 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 -1 0" />
     <limit lower="-0.015" upper="0.015" effort="1.0" velocity="0.1" />
-    <mimic joint="gripper_left_finger_joint" multiplier="1.0" offset="0.0" />
   </joint>
 
   <link name="gripper_right_finger_link">
@@ -476,5 +475,11 @@
   </joint>
 
   <link name="tool0" />
+
+  <!-- ========================================== -->
+  <!-- ros2_control Mock Hardware Interface       -->
+  <!-- ========================================== -->
+  <xacro:include filename="devotics_arm_v1.ros2_control.xacro" />
+  <xacro:devotics_arm_v1_ros2_control name="DevoticsArmV1MockHardware" />
 
 </robot>

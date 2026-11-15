@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: devotics_arm_description
+    relative_path: urdf/devotics_arm_v1.urdf.xacro
+  srdf:
+    relative_path: config/devotics_arm_v1.srdf
+  package_settings:
+    author_name: Ishan
+    author_email: ishanshrestha941@gmail.com
+    generated_timestamp: 1794740000
